@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas Carnívoras</title>
+    <style>
+        :root {
+            --verde: #2d6a4f;
+            --verde-claro: #95d5b2;
+            --blanco: #f1faee;
+            --negro: #1d1d1d;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--blanco);
+            color: var(--negro);
+        }
+
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--blanco);
+            color: var(--negro);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+
+        header {
+            background-color: var(--verde);
+            color: white;
+            padding: 1em;
+            text-align: center;
+            flex: 1 100%;
+        }
+
+        nav {
+            background-color: var(--verde-claro);
+
+        nav a {
+            color: var(--negro);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5em 0.8em;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--verde);
+            color: white;
+        }
+
+
+        .logo {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+
+        main {
+            flex: 1;
+            padding: 2em;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+        }
+
+        main.galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+            align-items: start;
+            /* 👈 fuerza alineación desde el tope */
+        }
+
+
+        .galeria img {
+            width: 100%;
+            border-radius: 12px;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .galeria img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
+
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            background-color: white;
+            border-radius: 12px;
+            padding: 1em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        figure img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+
+        figcaption {
+            margin-top: 0.5em;
+            font-style: italic;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+
+        footer {
+            flex: 1 100%;
+            background-color: var(--verde);
+            color: white;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            margin-top: 10em;
+        }
+
+        .sociales a {
+            color: white;
+            margin: 0 0.5em;
+            text-decoration: none;
+        }
+
+        /* Animación con keyframes */
+        .animada {
+            animation: rebotar 2s infinite alternate;
+        }
+
+        @keyframes rebotar {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            main {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    <div class="contenido">
+        <div class="animada">🌱 Bienvenido al Mundo de las Plantas Carnívoras</div>
+    </header>
+    <nav>
+        <div class="logo">Plantas Carnívoras</div>
+        <a href="#">Inicio</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <main id="galeria" class="galeria">
+        <figure>
+            <img src="assets/img/venus-atrapamoscas-semillas.png" alt="Venus atrapamoscas">
+            <figcaption>Venus atrapamoscas: Planta carnívora que atrapa insectos con sus hojas en forma de mandíbula.
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="assets/img/nepenthes.png" alt="Nepenthes">
+            <figcaption>Nepenthes: Planta jarro tropical que atrapa insectos en trampas líquidas dentro de sus “jarras”
+                colgantes.</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/img/sarracenia.png" alt="Sarracenia">
+            <figcaption>Sarracenia: Planta con tubos verticales que atraen insectos usando néctar, colores brillantes y
+                superficies resbaladizas.</figcaption>
+        </figure>
+        <figure>
+            <img src="assets/img/drosera.png" alt="Drosera">
+            <figcaption>Drosera: Planta cubierta de tentáculos pegajosos que atrapan insectos y enrollan la hoja para
+                digerirlos.</figcaption>
+        </figure>
+        </figure>
+    </main>
+    </div>
+    <footer id="contacto">
+        <div>Contacto: info@plantasplus.com</div>
+        <div class="sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+
+</html>
